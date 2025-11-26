@@ -33,6 +33,9 @@ void HLKLD2402Component::setup() {
   // IMPORTANT ADDITION: Ensure the device starts in normal mode
   // This prevents issues with leftover engineering mode from previous sessions
   ESP_LOGI(TAG, "Setting device to normal mode on startup...");
+
+  ESP_LOGI(TAG, "Delay 1-3 seconds, wait for ld2402 boot");
+  delay(2000);
   
   // Enter config mode - use multiple attempts as device may be in an inconsistent state
   bool config_success = false;
